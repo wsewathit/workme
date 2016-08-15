@@ -9,7 +9,6 @@ class Fontend extends Fontend_controller {
 
 	public function __construct(){
 		parent::__construct(); 
-		
 	}
 	public function index()
 	{
