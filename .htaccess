@@ -1,0 +1,43 @@
+RewriteEngine on
+RewriteBase /looknoo/
+    
+#RewriteCond $1 !^(index\.php|assets|images|robots\.txt|favicon\.ico)
+#RewriteRule ^(.*)$ index.php/$1 [L]s
+
+#Removes access to the system folder by users.  
+#Additionally this will allow you to create a System.php controller,  
+#previously this would not have been possible.  
+#'system' can be replaced if you have renamed your system folder.  
+RewriteCond %{REQUEST_URI} ^core.*  
+RewriteRule ^(.*)$ /index.php?/$1 [L]  
+ 
+#When your application folder isn't in the system folder  
+#This snippet prevents user access to the application folder  
+#Submitted by: Fabdrol  
+#Rename 'application' to your applications folder name.  
+RewriteCond %{REQUEST_URI} ^application.*  
+RewriteRule ^(.*)$ /index.php?/$1 [L]  
+ 
+#Checks to see if the user is attempting to access a valid file,  
+#such as an image or css document, if this isn't true it sends the  
+#request to index.php  
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_FILENAME} !-d  
+#RewriteRule ^(.*)$ /shop/index.php?/$1 [L]  
+RewriteRule ^(.*)$ index.php?/$1 [L]  
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 seconds"
+    ExpiresByType image/x-icon "access plus 2692000 seconds"
+    ExpiresByType image/jpeg "access plus 2692000 seconds"
+    ExpiresByType image/png "access plus 2692000 seconds"
+    ExpiresByType image/gif "access plus 2692000 seconds"
+    ExpiresByType application/x-shockwave-flash "access plus 2692000 seconds"
+    ExpiresByType text/css "access plus 2692000 seconds"
+    ExpiresByType text/javascript "access plus 2692000 seconds"
+    ExpiresByType application/x-javascript "access plus 2692000 seconds"
+    ExpiresByType text/html "access plus 600 seconds"
+    ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</IfModule>
+
