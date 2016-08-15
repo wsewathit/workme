@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Project_controller extends CI_Controller {
+class Fontend_controller extends CI_Controller {
 	
 	function __construct()
     {

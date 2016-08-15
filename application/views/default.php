@@ -1,8 +1,7 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>PROJECT</title>
+<title><?php echo $title; ?></title>
 
 <meta charset="utf-8">
 <!--  SCRIPT JS -->
@@ -30,5 +29,7 @@
 <?php echo $head;?>
 
 <?php echo $content;?>
+
+<?php echo $footer;?>
 </body>
 </html>		

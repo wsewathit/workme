@@ -62,30 +62,16 @@ $template['active_template'] = 'default';
 */
 
 
-$template['test']['template'] = 'default';
-$template['test']['regions'] = array(
-		'title',
-		'keywords',
-		'description',
-		'head',
-		'menu',
-		'content',
-		'footer',
-		'notify'
-);
-$template['test']['parser'] = 'parser';
-$template['test']['parser_method'] = 'parse';
-$template['test']['parse_template'] = FALSE;
-
 
 $template['default']['template'] = 'default';
 $template['default']['regions'] = array( 
 	'title',
-		'head',
+	'head',
 	'menu', 
 	'submenu', 
 	'content', 
-	'notify'
+	'notify',
+	'footer'
 );
 $template['default']['parser'] = 'parser';
 $template['default']['parser_method'] = 'parse';

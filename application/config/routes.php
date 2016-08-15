@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "project";
+$route['default_controller'] = "fontend";
 $route['404_override'] = '';
 
 
